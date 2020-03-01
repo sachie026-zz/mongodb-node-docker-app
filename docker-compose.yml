@@ -1,0 +1,15 @@
+version: "3"
+services:
+       web:
+           container_name: mongo-app
+           image: latest123/mongo-app
+           build: .
+           ports:
+             - "8080:8080"
+           links:
+             - mongo
+       mongo:
+             container_name: mongo
+             image: mongo
+             ports:
+               - '27017:27017'
